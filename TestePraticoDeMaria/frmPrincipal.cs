@@ -58,6 +58,7 @@ namespace TestTCC
                     File.Create(sCaminhoArquivo);
                 }
 
+
                 string[] conteudo = File.ReadAllLines(sCaminhoArquivo);
 
                 if (conteudo.Length > 0 && conteudo.Length == 5)
