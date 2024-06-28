@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Negócios;
 
-namespace TestTCC.Bases
+namespace TestePraticoDeMaria.Bases
 {
     public partial class frmBase : Form
     {

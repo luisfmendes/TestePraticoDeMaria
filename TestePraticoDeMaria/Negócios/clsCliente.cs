@@ -61,7 +61,7 @@ namespace TestePraticoDeMaria.Negócios
                 ID_CLIENTE = conexao.ExecutarComando(cmdSQL).ToInt32();
                 
             }
-            catch(NpgsqlException erro)
+            catch
             {
                 throw;
             }
@@ -93,7 +93,7 @@ namespace TestePraticoDeMaria.Negócios
                conexao.ExecutarComando(cmdSQL);
 
             }
-            catch (NpgsqlException erro)
+            catch 
             {
                 throw;
             }
@@ -116,7 +116,7 @@ namespace TestePraticoDeMaria.Negócios
 
                 conexao.ExecutarComando(cmdSQL);
             }
-            catch (NpgsqlException erro)
+            catch
             {
                 throw;
             }
@@ -142,7 +142,7 @@ namespace TestePraticoDeMaria.Negócios
                 }
                 return RetornoDs;
             }
-            catch (NpgsqlException erro)
+            catch
             {
                 throw;
             }
@@ -177,7 +177,7 @@ namespace TestePraticoDeMaria.Negócios
                 }
                
             }
-            catch (NpgsqlException erro)
+            catch
             {
                 throw;
             }
@@ -221,7 +221,7 @@ namespace TestePraticoDeMaria.Negócios
                 }
                 return RetornoDs;
             }
-            catch (NpgsqlException erro)
+            catch
             {
                 throw;
             }
@@ -246,7 +246,7 @@ namespace TestePraticoDeMaria.Negócios
                 }
                 return false;
             }
-            catch (NpgsqlException erro)
+            catch
             {
                 throw;
             }

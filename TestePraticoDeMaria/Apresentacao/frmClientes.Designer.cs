@@ -48,6 +48,7 @@
             this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnNovo);
             this.panel2.Controls.Add(this.btnExcluir);
             this.panel2.Controls.Add(this.btnAlterar);
             this.panel2.Controls.Add(this.groupPanel1);
@@ -78,6 +80,7 @@
             this.panel2.Controls.SetChildIndex(this.groupPanel1, 0);
             this.panel2.Controls.SetChildIndex(this.btnAlterar, 0);
             this.panel2.Controls.SetChildIndex(this.btnExcluir, 0);
+            this.panel2.Controls.SetChildIndex(this.btnNovo, 0);
             // 
             // btnGravar
             // 
@@ -368,7 +371,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAlterar.Location = new System.Drawing.Point(266, 407);
+            this.btnAlterar.Location = new System.Drawing.Point(310, 407);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(93, 35);
             this.btnAlterar.TabIndex = 10;
@@ -389,6 +392,20 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.Honeydew;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnNovo.Location = new System.Drawing.Point(211, 407);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(93, 35);
+            this.btnNovo.TabIndex = 12;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // frmClientes
             // 
@@ -430,5 +447,6 @@
         private Bases.txtTelefone txtTelefone;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

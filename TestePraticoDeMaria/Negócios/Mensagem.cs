@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestTCC.Bases;
+using TestePraticoDeMaria.Bases;
 
-namespace TestTCC.Negócios
+namespace TestePraticoDeMaria.Negócios
 {
     public static class Mensagem
     {

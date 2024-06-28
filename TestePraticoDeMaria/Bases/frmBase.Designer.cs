@@ -1,4 +1,4 @@
-﻿namespace TestTCC.Bases
+﻿namespace TestePraticoDeMaria.Bases
 {
     partial class frmBase
     {

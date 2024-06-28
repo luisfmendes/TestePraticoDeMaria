@@ -139,7 +139,7 @@ namespace TestePraticoDeMaria
                 transacao.Commit(); //Confirma transação
                 sNovoId[0] = sNovoId[1] = null;
             }
-            catch (NpgsqlException erro)
+            catch
             {
                 transacao.Rollback(); //Desfaz transação em caso de erro
 
@@ -159,7 +159,6 @@ namespace TestePraticoDeMaria
                 }
 
             }
-            catch (Exception) { }
             finally
             {
                 FecharBanco(cn); //Fecha conexão com o banco
@@ -167,25 +166,6 @@ namespace TestePraticoDeMaria
             return retorno_id;
         }
 
-        /// <summary>
-        /// Execução de Transação. Retorna TRUE/FALSE se a transação foi executada e se a qtdade de registros afetados foi maior que 1.
-        /// </summary>
-        /// <param name="cmdSQL">Lista de Comandos SQL a serem executados</param>
-        /// <returns>Retorna TRUE/FALSE se a transação foi executada e se a qtdade de registros afetados foi maior que 1</returns>
-        public bool ExecutarTransacao_bool(List<NpgsqlCommand> cmdSQL)
-        {
-            bool bRetorno = false;
-            try
-            {
-                bRetorno = (ExecutarTransacao(cmdSQL).Count == cmdSQL.Count);
-            }
-            catch
-            {
-                bRetorno = false;
-                throw;
-            }
-            return bRetorno;
-        }
 
         /// <summary>
         /// Execução de comandos. Retorna o Id gerado no banco de dados.
@@ -214,7 +194,7 @@ namespace TestePraticoDeMaria
                     }
                 }
             }
-            catch (Exception erro)
+            catch
             {
 
                 sRetorno = null;
@@ -330,39 +310,7 @@ namespace TestePraticoDeMaria
         }
 
         //Classe para retornar um DataReader()
-        public NpgsqlDataReader RetornarDataReader(string strQuery)
-        {
-            NpgsqlConnection cn = new NpgsqlConnection();
-            NpgsqlDataReader dr;
-            try
-            {
-                cn = AbrirBanco();
-                if (cn == null)
-                {
-                    return null;
-                }
-
-                NpgsqlCommand cmd = new NpgsqlCommand
-                {
-                    CommandType = CommandType.Text,
-                    CommandText = strQuery.ToString()
-                };
-                cmd.Connection = cn;
-                dr = cmd.ExecuteReader();
-            }
-            catch
-            {
-                dr = null;
-                throw;
-            }
-            finally
-            {
-                FecharBanco(cn);
-            }
-            return dr;
-        }
-
-
+      
 
     }
 }

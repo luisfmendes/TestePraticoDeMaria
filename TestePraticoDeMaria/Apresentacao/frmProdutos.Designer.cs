@@ -45,6 +45,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnNovo);
             this.panel2.Controls.Add(this.btnExcluir);
             this.panel2.Controls.Add(this.btnAlterar);
             this.panel2.Controls.Add(this.btnCancelar);
@@ -69,6 +71,7 @@
             this.panel2.Controls.SetChildIndex(this.btnCancelar, 0);
             this.panel2.Controls.SetChildIndex(this.btnAlterar, 0);
             this.panel2.Controls.SetChildIndex(this.btnExcluir, 0);
+            this.panel2.Controls.SetChildIndex(this.btnNovo, 0);
             // 
             // groupPanel1
             // 
@@ -287,7 +290,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAlterar.Location = new System.Drawing.Point(259, 407);
+            this.btnAlterar.Location = new System.Drawing.Point(303, 407);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(93, 35);
             this.btnAlterar.TabIndex = 14;
@@ -328,6 +331,20 @@
             this.highlighter1.ContainerControl = this;
             this.highlighter1.FocusHighlightColor = DevComponents.DotNetBar.Validator.eHighlightColor.Red;
             // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.Honeydew;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnNovo.Location = new System.Drawing.Point(204, 407);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(93, 35);
+            this.btnNovo.TabIndex = 16;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            // 
             // frmProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,5 +384,6 @@
         private System.Windows.Forms.NumericUpDown txtPrecoCompra;
         private System.Windows.Forms.NumericUpDown txtPrecoVenda;
         private DevComponents.DotNetBar.Validator.Highlighter highlighter1;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

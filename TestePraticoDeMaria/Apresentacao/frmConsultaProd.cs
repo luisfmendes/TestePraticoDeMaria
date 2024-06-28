@@ -9,8 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestePraticoDeMaria.Negócios;
-using TestTCC.Bases;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Bases;
 
 namespace TestePraticoDeMaria.Apresentacao
 {

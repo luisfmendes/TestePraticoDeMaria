@@ -7,10 +7,9 @@ using System.Windows.Forms;
 using TestePraticoDeMaria;
 using TestePraticoDeMaria.Apresentacao;
 using TestePraticoDeMaria.Bases;
-using TestTCC.Bases;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Negócios;
 
-namespace TestTCC
+namespace TestePraticoDeMaria
 {
     public partial class frmPrincipal : frmBase
     {
@@ -37,6 +36,7 @@ namespace TestTCC
         {
             try
             {
+                //Feito isso para que o formulário siga a barra de ferramentas do windows ficando somente no tamanho da area de trabalho
                 WindowState = FormWindowState.Normal;
                 Height = Screen.PrimaryScreen.WorkingArea.Height;
                 Width = Screen.PrimaryScreen.WorkingArea.Width;
@@ -45,6 +45,9 @@ namespace TestTCC
                 MinimumSize = Size;
                 MaximumSize = Size;
                 Refresh();
+                //---------------------------
+
+
                 SuperTabGeral.SelectedItem = tabCadastros;
                 string sWallPaper = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", false).GetValue("WallPaper").ToString();
                 if (System.IO.File.Exists(sWallPaper))
@@ -52,10 +55,11 @@ namespace TestTCC
                     panel2.BackgroundImage = new Bitmap(sWallPaper).Resize(Width, Height);
                 }
 
-                string sCaminhoArquivo = Path.Combine(Application.ExecutablePath, VariaveisGlobal.sNomeArqConexao);
+                //Verificando os arquivos de conexão
+                string sCaminhoArquivo = Path.Combine(Application.StartupPath, VariaveisGlobal.sNomeArqConexao);
                 if (!File.Exists(sCaminhoArquivo))
                 {
-                    File.Create(sCaminhoArquivo);
+                    File.WriteAllText(sCaminhoArquivo, "");
                 }
 
 
@@ -106,6 +110,7 @@ namespace TestTCC
                     frmCli.Activate();
                     return;
                 }
+                verificaConexao();
                 frmCli = new frmClientes(VariaveisGlobal.TipoOperacao.Gravar);
                 frmCli.Show();
             }
@@ -125,6 +130,7 @@ namespace TestTCC
                     frmConsultaCli.Activate();
                     return;
                 }
+                verificaConexao();
                 frmConsultaCli = new frmConsultaClientes();
                 frmConsultaCli.Show();
             }
@@ -144,6 +150,7 @@ namespace TestTCC
                     frmProd.Activate();
                     return;
                 }
+                verificaConexao();
                 frmProd = new frmProdutos(VariaveisGlobal.TipoOperacao.Gravar);
                 frmProd.Show();
             }
@@ -163,6 +170,7 @@ namespace TestTCC
                     frmConsultProd.Activate();
                     return;
                 }
+                verificaConexao();
                 frmConsultProd = new frmConsultaProd();
                 frmConsultProd.Show();
             }
@@ -182,6 +190,7 @@ namespace TestTCC
                     frmForn.Activate();
                     return;
                 }
+                verificaConexao();
                 frmForn = new frmFornecedor(VariaveisGlobal.TipoOperacao.Gravar);
                 frmForn.Show();
             }
@@ -202,6 +211,7 @@ namespace TestTCC
                     frmConsultForn.Activate();
                     return;
                 }
+                verificaConexao();
                 frmConsultForn = new frmConsultaFornecedor();
                 frmConsultForn.Show();
             }
@@ -211,10 +221,6 @@ namespace TestTCC
             }
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnVenda_Click(object sender, EventArgs e)
         {
@@ -226,6 +232,7 @@ namespace TestTCC
                     formVenda.Activate();
                     return;
                 }
+                verificaConexao();
                 formVenda = new frmVenda();
                 formVenda.WindowState = FormWindowState.Maximized;
                 formVenda.Show();
@@ -246,6 +253,7 @@ namespace TestTCC
                     formCompras.Activate();
                     return;
                 }
+                verificaConexao();
                 formCompras = new frmCompras();
                 formCompras.Show();
             }
@@ -265,6 +273,7 @@ namespace TestTCC
                     formComprasConsulta.Activate();
                     return;
                 }
+                verificaConexao();
                 formComprasConsulta = new frmConsultaCompra();
                 formComprasConsulta.Show();
             }
@@ -274,8 +283,32 @@ namespace TestTCC
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void verificaConexao()
         {
+            try
+            {
+                if(!new clsConexao().TestaConexao())
+                {
+                    throw new Exception("Não é possível entrar pois não há conexão com o banco de dados");
+                }
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        private void btnConfiguraConexao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmConfiguraConexao frm = new frmConfiguraConexao();
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Mensagem.Erro(ex.Message, "Erro");
+            }
 
         }
     }

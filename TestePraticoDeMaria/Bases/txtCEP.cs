@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Negócios;
 using static TestePraticoDeMaria.VariaveisGlobal;
 
 namespace TestePraticoDeMaria.Bases

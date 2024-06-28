@@ -9,8 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestePraticoDeMaria.Negócios;
-using TestTCC.Bases;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Bases;
 using static TestePraticoDeMaria.VariaveisGlobal;
 
 namespace TestePraticoDeMaria.Apresentacao
@@ -56,12 +55,14 @@ namespace TestePraticoDeMaria.Apresentacao
                     case TipoOperacao.Gravar:
                         this.ActiveControl = txtNome;
                         btnAlterar.Visible = false;
+                        btnNovo.Visible = false;
                         btnExcluir.Visible = false;
                         break;
                     case TipoOperacao.Alterar:
                         PreencheForm();
                         this.ActiveControl = txtNome;
                         btnAlterar.Visible = false;
+                        btnNovo.Visible = false;
                         btnExcluir.Visible = false;
                         break;
                     case TipoOperacao.Consultar:
@@ -70,6 +71,7 @@ namespace TestePraticoDeMaria.Apresentacao
                         btnGravar.Visible = false;
                         btnCancelar.Visible = false;
                         btnAlterar.Visible = true;
+                        btnNovo.Visible = true;
                         btnExcluir.Visible = true;
                         break;
                 }
@@ -148,6 +150,7 @@ namespace TestePraticoDeMaria.Apresentacao
                             btnGravar.Visible = false;
                             btnCancelar.Visible = false;
                             btnAlterar.Visible = true;
+                            btnNovo.Visible = true;
                             btnExcluir.Visible = true;
                             break;
                         case TipoOperacao.Alterar:
@@ -310,6 +313,7 @@ namespace TestePraticoDeMaria.Apresentacao
                     btnGravar.Visible = false;
                     btnCancelar.Visible = false;
                     btnAlterar.Visible = true;
+                    btnNovo.Visible = true;
                     btnExcluir.Visible = true;
                 }
             }
@@ -329,6 +333,7 @@ namespace TestePraticoDeMaria.Apresentacao
                 btnCancelar.Visible = true;
                 this.ActiveControl = txtNome;
                 btnAlterar.Visible = false;
+                btnNovo.Visible = false;
                 btnExcluir.Visible = false;
             }
             catch (Exception ex)
@@ -372,6 +377,26 @@ namespace TestePraticoDeMaria.Apresentacao
             {
                 Mensagem.Erro(ex.Message, "Erro");
             }
-        }        
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpaTudo(true);
+                HabilitaDesabilita(true);
+                operacao = TipoOperacao.Gravar;
+                this.ActiveControl = txtNome;
+                btnAlterar.Visible = false;
+                btnNovo.Visible = false;
+                btnExcluir.Visible = false;
+                btnGravar.Visible = true;
+                btnCancelar.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                Mensagem.Erro(ex.Message, "Erro");
+            }
+        }
     }
 }

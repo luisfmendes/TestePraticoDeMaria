@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using TestePraticoDeMaria.Negócios;
-using TestTCC.Bases;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Bases;
 using static TestePraticoDeMaria.VariaveisGlobal;
 
 namespace TestePraticoDeMaria.Apresentacao
@@ -50,12 +49,14 @@ namespace TestePraticoDeMaria.Apresentacao
                     case TipoOperacao.Gravar:
                         this.ActiveControl = txtNome;
                         btnAlterar.Visible = false;
+                        btnNovo.Visible = false;
                         btnExcluir.Visible = false;
                         break;
                     case TipoOperacao.Alterar:
                         PreencheForm();
                         this.ActiveControl = txtNome;
                         btnAlterar.Visible = false;
+                        btnNovo.Visible = false;
                         btnExcluir.Visible = false;
                         break;
                     case TipoOperacao.Consultar:
@@ -63,6 +64,7 @@ namespace TestePraticoDeMaria.Apresentacao
                         HabilitaDesabilita(false);
                         btnGravar.Visible = false;
                         btnCancelar.Visible = false;
+                        btnNovo.Visible = true;
                         btnAlterar.Visible = true;
                         btnExcluir.Visible = true;
                         break;
@@ -137,6 +139,7 @@ namespace TestePraticoDeMaria.Apresentacao
                             idCliente = cliente.ID_CLIENTE;
                             btnGravar.Visible = false;
                             btnCancelar.Visible = false;
+                            btnNovo.Visible = true;
                             btnAlterar.Visible = true;
                             btnExcluir.Visible = true;
                             break;
@@ -282,6 +285,7 @@ namespace TestePraticoDeMaria.Apresentacao
                     HabilitaDesabilita(false);
                     btnGravar.Visible = false;
                     btnCancelar.Visible = false;
+                    btnNovo.Visible = true;
                     btnAlterar.Visible = true;
                     btnExcluir.Visible = true;
                 }
@@ -302,6 +306,7 @@ namespace TestePraticoDeMaria.Apresentacao
                 btnGravar.Visible = true;
                 btnCancelar.Visible = true;
                 this.ActiveControl = txtNome;
+                btnNovo.Visible = false;
                 btnAlterar.Visible = false;
                 btnExcluir.Visible = false;
             }
@@ -342,6 +347,26 @@ namespace TestePraticoDeMaria.Apresentacao
                     Mensagem.Erro("Cliente não informado!", "Erro");
                 }
 
+            }
+            catch (Exception ex)
+            {
+                Mensagem.Erro(ex.Message, "Erro");
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpaTudo(true);
+                HabilitaDesabilita(true);
+                operacao = TipoOperacao.Gravar;
+                this.ActiveControl = txtNome;
+                btnAlterar.Visible = false;
+                btnNovo.Visible = false;
+                btnExcluir.Visible = false;
+                btnGravar.Visible = true ;
+                btnCancelar.Visible = true;
             }
             catch (Exception ex)
             {

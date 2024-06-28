@@ -1,6 +1,6 @@
 ﻿namespace TestePraticoDeMaria.Apresentacao
 {
-    partial class ConfiguraConexao
+    partial class frmConfiguraConexao
     {
         /// <summary>
         /// Required designer variable.
@@ -105,6 +105,7 @@
             // 
             // btnGravar
             // 
+            this.btnGravar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGravar.BackColor = System.Drawing.Color.Honeydew;
             this.btnGravar.Enabled = false;
             this.btnGravar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,6 +117,7 @@
             this.btnGravar.TabIndex = 7;
             this.btnGravar.Text = "Gravar";
             this.btnGravar.UseVisualStyleBackColor = false;
+            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
             // 
             // txtPorta
             // 

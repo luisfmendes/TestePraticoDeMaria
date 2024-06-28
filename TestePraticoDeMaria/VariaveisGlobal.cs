@@ -12,7 +12,7 @@ namespace TestePraticoDeMaria
 {
     public class VariaveisGlobal
     {
-        public static string strConexao = "Server=motty.db.elephantsql.com;Port=5432;User Id=evxiehtc;Password=Ve2rV7Mm_DYTl4a8OlUvyud_mcmJZ-5o;Database=evxiehtc;CommandTimeout=240;Pooling=false;";
+        public static string strConexao = "";
 
         //Nome do arquivo de conexão
         public static string sNomeArqConexao = "conexao.txt";

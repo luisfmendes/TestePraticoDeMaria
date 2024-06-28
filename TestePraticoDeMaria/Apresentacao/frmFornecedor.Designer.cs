@@ -31,6 +31,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,7 +51,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGravar = new System.Windows.Forms.Button();
             this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
-            this.txtCNPJ = new System.Windows.Forms.MaskedTextBox();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnNovo);
             this.panel2.Controls.Add(this.btnExcluir);
             this.panel2.Controls.Add(this.btnAlterar);
             this.panel2.Controls.Add(this.groupPanel1);
@@ -81,6 +83,7 @@
             this.panel2.Controls.SetChildIndex(this.groupPanel1, 0);
             this.panel2.Controls.SetChildIndex(this.btnAlterar, 0);
             this.panel2.Controls.SetChildIndex(this.btnExcluir, 0);
+            this.panel2.Controls.SetChildIndex(this.btnNovo, 0);
             // 
             // btnExcluir
             // 
@@ -102,7 +105,7 @@
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterar.ForeColor = System.Drawing.Color.DarkGoldenrod;
-            this.btnAlterar.Location = new System.Drawing.Point(266, 407);
+            this.btnAlterar.Location = new System.Drawing.Point(310, 407);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(93, 35);
             this.btnAlterar.TabIndex = 13;
@@ -165,6 +168,15 @@
             // 
             this.groupPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.groupPanel1.TabIndex = 12;
+            // 
+            // txtCNPJ
+            // 
+            this.highlighter1.SetHighlightOnFocus(this.txtCNPJ, true);
+            this.txtCNPJ.Location = new System.Drawing.Point(49, 203);
+            this.txtCNPJ.Mask = "99.999.999/9999-99";
+            this.txtCNPJ.Name = "txtCNPJ";
+            this.txtCNPJ.Size = new System.Drawing.Size(168, 26);
+            this.txtCNPJ.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -437,14 +449,19 @@
             this.highlighter1.ContainerControl = this;
             this.highlighter1.FocusHighlightColor = DevComponents.DotNetBar.Validator.eHighlightColor.Red;
             // 
-            // txtCNPJ
+            // btnNovo
             // 
-            this.highlighter1.SetHighlightOnFocus(this.txtCNPJ, true);
-            this.txtCNPJ.Location = new System.Drawing.Point(49, 203);
-            this.txtCNPJ.Mask = "99.999.999/9999-99";
-            this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.Size = new System.Drawing.Size(168, 26);
-            this.txtCNPJ.TabIndex = 4;
+            this.btnNovo.BackColor = System.Drawing.Color.Honeydew;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnNovo.Location = new System.Drawing.Point(211, 407);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(93, 35);
+            this.btnNovo.TabIndex = 17;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // frmFornecedor
             // 
@@ -489,5 +506,6 @@
         private System.Windows.Forms.Label label8;
         private DevComponents.DotNetBar.Validator.Highlighter highlighter1;
         private System.Windows.Forms.MaskedTextBox txtCNPJ;
+        private System.Windows.Forms.Button btnNovo;
     }
 }

@@ -3,8 +3,7 @@ using System;
 using System.Data;
 using System.Linq;
 using TestePraticoDeMaria.Negócios;
-using TestTCC.Bases;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Bases;
 using System.Windows.Forms;
 
 namespace TestePraticoDeMaria.Apresentacao

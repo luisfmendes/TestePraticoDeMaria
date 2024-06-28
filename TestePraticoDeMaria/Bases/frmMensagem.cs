@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Negócios;
 using static TestePraticoDeMaria.VariaveisGlobal;
 
-namespace TestTCC.Bases
+namespace TestePraticoDeMaria.Bases
 {
     public partial class frmMensagem : Form
     {

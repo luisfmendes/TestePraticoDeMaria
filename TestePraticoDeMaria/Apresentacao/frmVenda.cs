@@ -6,8 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using TestePraticoDeMaria.Negócios;
-using TestTCC.Bases;
-using TestTCC.Negócios;
+using TestePraticoDeMaria.Bases;
 
 namespace TestePraticoDeMaria.Apresentacao
 {
@@ -17,7 +16,6 @@ namespace TestePraticoDeMaria.Apresentacao
         clsCliente cliente = new clsCliente();
         clsVenda dadosVenda = new clsVenda();
         List<clsVenda> venda = new List<clsVenda>();
-        bool bControleCodigo = false;
         bool mouseClicked;
         Point clickedAt;
 
