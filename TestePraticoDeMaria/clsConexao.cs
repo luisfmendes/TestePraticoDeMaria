@@ -10,9 +10,7 @@ using System.Xml;
 namespace TestePraticoDeMaria
 {
     public class clsConexao
-    {        
-
-        public string sCmd_SQl_Erro;
+    {      
 
         /// <summary>
         /// Efetua o teste de conexão com o Banco de Dados
@@ -123,7 +121,7 @@ namespace TestePraticoDeMaria
                 cn = AbrirBanco(); //Conexao ao banco
                 transacao = cn.BeginTransaction(); //Inicia Transação
                 List<string> cmdsql = new List<string>();
-                sCmd_SQl_Erro = "";
+                
                 for (int i = 0; i < listaComando.Count; i++)
                 {
                     listaComando[i].Transaction = transacao;

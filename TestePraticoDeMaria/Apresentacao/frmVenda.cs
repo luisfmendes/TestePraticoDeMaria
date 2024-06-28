@@ -446,6 +446,10 @@ namespace TestePraticoDeMaria.Apresentacao
                     int ven_id = row["id_venda"].Value.ToInt16();
                     grdConsultaProdutos.PrimaryGrid.DataSource = new clsVenda().BuscaProdutosVenda(ven_id);
                 }
+                else
+                {
+                    grdConsultaProdutos.PrimaryGrid.DataSource = null;
+                }
             }
             catch (Exception ex)
             {
