@@ -294,7 +294,7 @@ namespace TestePraticoDeMaria
             }
             catch
             {
-                throw;
+                throw new Exception("Não é possível entrar pois não há conexão com o banco de dados");
             }
         }
 
