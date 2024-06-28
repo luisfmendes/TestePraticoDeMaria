@@ -231,7 +231,7 @@ namespace TestePraticoDeMaria.Negócios
                 cmdSQL = new NpgsqlCommand
                 {
                     CommandType = CommandType.Text,
-                    CommandText = $@"select * from tab_produto where true {(nomeContem.IsNullOrEmpty() ? "" : filtro)} {(bAtivo == 'T' ? "" : $" and ativo = {(bAtivo == 'A' ? "true" : "false")}")};"
+                    CommandText = $@"select *, (select quantidade from tab_estoque where tab_estoque.id_produto = tab_produto.id_produto) as quantidade from tab_produto where true {(nomeContem.IsNullOrEmpty() ? "" : filtro)} {(bAtivo == 'T' ? "" : $" and ativo = {(bAtivo == 'A' ? "true" : "false")}")};"
                 };
 
                 RetornoDs = conexao.RetornarDataSet(cmdSQL);

@@ -263,6 +263,12 @@
     <Compile Include="Apresentacao\frmProdutos.Designer.cs">
       <DependentUpon>frmProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Apresentacao\frmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Apresentacao\frmRelatorio.Designer.cs">
+      <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Apresentacao\frmVenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,14 @@
     <Compile Include="Negócios\Mensagem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\dsDadosRelatorio.cs">
+      <DependentUpon>dsDadosRelatorio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\dsDadosRelatorio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDadosRelatorio.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VariaveisGlobal.cs" />
     <EmbeddedResource Include="Apresentacao\frmConfiguraConexao.resx">
@@ -345,6 +359,9 @@
     <EmbeddedResource Include="Apresentacao\frmProdutos.resx">
       <DependentUpon>frmProdutos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Apresentacao\frmRelatorio.resx">
+      <DependentUpon>frmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Apresentacao\frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +390,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorios\rptProdutos.rdlc" />
+    <EmbeddedResource Include="Relatorios\rptCliente.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -391,6 +410,17 @@
     <Compile Include="clsConexao.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Relatorios\dsDadosRelatorio.xsc">
+      <DependentUpon>dsDadosRelatorio.xsd</DependentUpon>
+    </None>
+    <None Include="Relatorios\dsDadosRelatorio.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDadosRelatorio.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Relatorios\dsDadosRelatorio.xss">
+      <DependentUpon>dsDadosRelatorio.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Servicos_Grid.png" />
   </ItemGroup>
   <ItemGroup>
@@ -417,6 +447,7 @@
     <None Include="Resources\excluir_16x16.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\impressora.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

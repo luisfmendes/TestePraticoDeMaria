@@ -47,6 +47,7 @@
             this.rabNomeInicia = new System.Windows.Forms.RadioButton();
             this.rabNomeTermina = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRelatório = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -59,6 +60,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnRelatório);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.btnFiltrar);
             this.panel2.Controls.Add(this.groupBox1);
@@ -70,6 +72,7 @@
             this.panel2.Controls.SetChildIndex(this.groupBox1, 0);
             this.panel2.Controls.SetChildIndex(this.btnFiltrar, 0);
             this.panel2.Controls.SetChildIndex(this.groupBox2, 0);
+            this.panel2.Controls.SetChildIndex(this.btnRelatório, 0);
             // 
             // grdDadosClientes
             // 
@@ -278,6 +281,23 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             // 
+            // btnRelatório
+            // 
+            this.btnRelatório.BackColor = System.Drawing.Color.LightYellow;
+            this.btnRelatório.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatório.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatório.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRelatório.Image = global::TestePraticoDeMaria.Properties.Resources.impressora;
+            this.btnRelatório.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatório.Location = new System.Drawing.Point(679, 415);
+            this.btnRelatório.Name = "btnRelatório";
+            this.btnRelatório.Size = new System.Drawing.Size(117, 31);
+            this.btnRelatório.TabIndex = 13;
+            this.btnRelatório.Text = "Relatório";
+            this.btnRelatório.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRelatório.UseVisualStyleBackColor = false;
+            this.btnRelatório.Click += new System.EventHandler(this.btnRelatório_Click);
+            // 
             // frmConsultaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,5 +335,6 @@
         private System.Windows.Forms.RadioButton rabNomeContem;
         private System.Windows.Forms.RadioButton rabNomeTermina;
         private System.Windows.Forms.RadioButton rabNomeInicia;
+        private System.Windows.Forms.Button btnRelatório;
     }
 }

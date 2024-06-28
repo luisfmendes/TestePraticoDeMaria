@@ -79,5 +79,24 @@ namespace TestePraticoDeMaria.Apresentacao
                 Mensagem.Erro(ex.Message, "Erro");
             }
         }
+
+        private void btnRelatório_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet ds = new clsCliente().BuscaTodosFiltro(txtNomeFiltro.Text, rabTodos.Checked ? 'A' : rabAtivo.Checked ? 'A' : 'I', rabNomeContem.Checked ? 'C' : rabNomeInicia.Checked ? 'I' : 'T');
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count <= 0)
+                {
+                    Mensagem.Informacao("Nenhum registro encontrado!", "Informação");
+                }
+                
+                frmRelatorio frm = new frmRelatorio("rptCliente.rdlc", ds.Tables[0]);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Mensagem.Erro(ex.Message, "Erro");
+            }
+        }
     }
 }

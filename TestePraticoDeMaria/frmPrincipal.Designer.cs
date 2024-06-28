@@ -33,6 +33,7 @@
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.SuperTabGeral = new DevComponents.DotNetBar.Controls.SideNav();
             this.sideNavPanel3 = new DevComponents.DotNetBar.Controls.SideNavPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.reflectionLabel3 = new DevComponents.DotNetBar.Controls.ReflectionLabel();
             this.metroTilePanel3 = new DevComponents.DotNetBar.Metro.MetroTilePanel();
@@ -85,7 +86,7 @@
             // 
             // btnFechar
             // 
-            this.btnFechar.Location = new System.Drawing.Point(11, 544);
+            this.btnFechar.Location = new System.Drawing.Point(11, 678);
             this.btnFechar.Visible = false;
             // 
             // btnSair
@@ -139,6 +140,7 @@
             // 
             // sideNavPanel3
             // 
+            this.sideNavPanel3.Controls.Add(this.button1);
             this.sideNavPanel3.Controls.Add(this.panel5);
             this.sideNavPanel3.Controls.Add(this.metroTilePanel3);
             this.sideNavPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -146,6 +148,16 @@
             this.sideNavPanel3.Name = "sideNavPanel3";
             this.sideNavPanel3.Size = new System.Drawing.Size(710, 455);
             this.sideNavPanel3.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(183, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel5
             // 
@@ -595,5 +607,6 @@
         private DevComponents.DotNetBar.Controls.ReflectionLabel reflectionLabel2;
         private DevComponents.DotNetBar.Metro.MetroTileItem btnConsultaCompra;
         private DevComponents.DotNetBar.Controls.SideNavItem btnConfiguraConexao;
+        private System.Windows.Forms.Button button1;
     }
 }
