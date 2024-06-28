@@ -46,6 +46,7 @@
             this.ativo = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.coluna_visualizar = new DevComponents.DotNetBar.SuperGrid.GridColumn();
             this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnRelatório = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnRelatório);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Controls.Add(this.btnFiltrar);
             this.panel2.Controls.Add(this.groupBox1);
@@ -69,6 +71,7 @@
             this.panel2.Controls.SetChildIndex(this.groupBox1, 0);
             this.panel2.Controls.SetChildIndex(this.btnFiltrar, 0);
             this.panel2.Controls.SetChildIndex(this.groupBox2, 0);
+            this.panel2.Controls.SetChildIndex(this.btnRelatório, 0);
             // 
             // groupBox2
             // 
@@ -89,7 +92,7 @@
             this.rabNomeContem.ForeColor = System.Drawing.Color.Black;
             this.rabNomeContem.Location = new System.Drawing.Point(6, 11);
             this.rabNomeContem.Name = "rabNomeContem";
-            this.rabNomeContem.Size = new System.Drawing.Size(113, 20);
+            this.rabNomeContem.Size = new System.Drawing.Size(112, 20);
             this.rabNomeContem.TabIndex = 3;
             this.rabNomeContem.TabStop = true;
             this.rabNomeContem.Text = "Nome contem:";
@@ -102,7 +105,7 @@
             this.rabNomeTermina.ForeColor = System.Drawing.Color.Black;
             this.rabNomeTermina.Location = new System.Drawing.Point(214, 11);
             this.rabNomeTermina.Name = "rabNomeTermina";
-            this.rabNomeTermina.Size = new System.Drawing.Size(108, 20);
+            this.rabNomeTermina.Size = new System.Drawing.Size(107, 20);
             this.rabNomeTermina.TabIndex = 11;
             this.rabNomeTermina.Text = "Termina com:";
             this.rabNomeTermina.UseVisualStyleBackColor = true;
@@ -114,7 +117,7 @@
             this.rabNomeInicia.ForeColor = System.Drawing.Color.Black;
             this.rabNomeInicia.Location = new System.Drawing.Point(125, 11);
             this.rabNomeInicia.Name = "rabNomeInicia";
-            this.rabNomeInicia.Size = new System.Drawing.Size(89, 20);
+            this.rabNomeInicia.Size = new System.Drawing.Size(88, 20);
             this.rabNomeInicia.TabIndex = 10;
             this.rabNomeInicia.Text = "Inicia com:";
             this.rabNomeInicia.UseVisualStyleBackColor = true;
@@ -277,6 +280,23 @@
             this.btnFiltrar.UseVisualStyleBackColor = false;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
+            // btnRelatório
+            // 
+            this.btnRelatório.BackColor = System.Drawing.Color.LightYellow;
+            this.btnRelatório.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRelatório.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRelatório.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnRelatório.Image = global::TestePraticoDeMaria.Properties.Resources.impressora;
+            this.btnRelatório.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRelatório.Location = new System.Drawing.Point(679, 415);
+            this.btnRelatório.Name = "btnRelatório";
+            this.btnRelatório.Size = new System.Drawing.Size(117, 31);
+            this.btnRelatório.TabIndex = 19;
+            this.btnRelatório.Text = "Relatório";
+            this.btnRelatório.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRelatório.UseVisualStyleBackColor = false;
+            this.btnRelatório.Click += new System.EventHandler(this.btnRelatório_Click);
+            // 
             // frmConsultaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,5 +333,6 @@
         private DevComponents.DotNetBar.SuperGrid.GridColumn nome_contato;
         private DevComponents.DotNetBar.SuperGrid.GridColumn ativo;
         private DevComponents.DotNetBar.SuperGrid.GridColumn coluna_visualizar;
+        private System.Windows.Forms.Button btnRelatório;
     }
 }

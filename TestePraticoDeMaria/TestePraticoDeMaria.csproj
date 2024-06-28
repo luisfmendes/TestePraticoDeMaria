@@ -390,6 +390,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relatorios\rptFornecedor.rdlc" />
     <EmbeddedResource Include="Relatorios\rptProdutos.rdlc" />
     <EmbeddedResource Include="Relatorios\rptCliente.rdlc" />
     <None Include="packages.config" />

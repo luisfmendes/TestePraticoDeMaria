@@ -360,8 +360,7 @@ namespace TestePraticoDeMaria.Apresentacao
                 cliente.BuscaUmRegistro();
                 if (cliente.NOME_CLIENTE.IsNullOrEmpty())
                 {
-                    Mensagem.Alerta("Cliente não localizado!", "Atenção");
-                    txtCodigoCliente.Focus();
+                    txtCodigoCliente.Text = "";
                     return;
                 }
                 txtNomeCliente.Text = cliente.NOME_CLIENTE;
